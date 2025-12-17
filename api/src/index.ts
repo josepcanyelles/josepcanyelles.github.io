@@ -20,9 +20,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '50mb' }));
 
-// Placeholder para rutas - debes importar tus rutas reales
-// import contactRouter from './routes/contact.js';
-// import healthRouter from './routes/health.js';
+// Importar rutas
+import contactRouter from './routes/contact.js';
+import healthRouter from './routes/health.js';
+// TODO: Descomentar cuando copies estos archivos del proyecto original:
 // import categoriaRouter from './routes/categoria.js';
 // import comercioRouter from './routes/comercio.js';
 // import actividadesRouter from './routes/actividades.js';
@@ -39,8 +40,9 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // Montar rutas con prefijo /api
-// app.use('/api', contactRouter);
-// app.use('/api', healthRouter);
+app.use('/api', contactRouter);
+app.use('/api', healthRouter);
+// TODO: Descomentar cuando copies estos archivos del proyecto original:
 // app.use('/api', categoriaRouter);
 // app.use('/api', comercioRouter);
 // app.use('/api', actividadesRouter);
